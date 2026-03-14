@@ -68,7 +68,7 @@ def main():
     votes_data = load_votes()
     fingerprint = get_user_fingerprint()
     
-    voted_fingerprints = [v['fingerprint'] for v in votes_data]
+    voted_fingerprints = [v.get('fingerprint', 'old_data') for v in votes_data]
     voted_names = [v['name'] for v in votes_data]
     
     # 选项列表
